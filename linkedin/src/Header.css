@@ -3,7 +3,7 @@
   top: 0;
   display: flex;
   background-color: white;
-  justify-content: space-evenly;
+  justify-content:space-around;
   border-bottom: 0.1px solid lightgray;
   padding-top: 10px;
   padding-bottom: 10px;
