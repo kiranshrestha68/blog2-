@@ -15,7 +15,9 @@ const Feed = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    db.collection("posts").onSnapshot((snapshot) =>
+    db.collection("posts")
+    .orderBy("timestamp","desc")
+    .onSnapshot((snapshot) =>
       setPosts(
         snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -27,6 +29,7 @@ const Feed = () => {
 
   const sendPost = (e) => {
     e.preventDefault();
+ 
 
     db.collection("posts").add({
       name: "Kiran Stha",
